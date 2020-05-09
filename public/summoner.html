@@ -1,0 +1,47 @@
+<html>
+
+<body>
+
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+
+    <div id="minhaDiv"></div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src='javascripts/javascript.js'></script>
+
+    <script>
+        $( document ).ready(function() {
+            let meuSummoner = localStorage.getItem('sumObj')
+            let parsedSummoner = JSON.parse(meuSummoner)
+
+            let accountId = parsedSummoner.accountId
+            let profileIconId = parsedSummoner.profileIconId
+            let revisionDate = parsedSummoner.revisionDate
+            let name = parsedSummoner.name
+            let id = parsedSummoner.id
+            let puuid = parsedSummoner.puuid
+            let summonerLevel = parsedSummoner.summonerLevel
+
+            var $accountId = $("<div id='accountId'>"+accountId+"</div>")
+            let $profileIconId = $("<div id='profileIconId'>"+profileIconId+"</div>")
+            let $revisionDate = $("<div id='revisionDate'>"+revisionDate+"</div>")
+            let $name = $("<div id='name'>"+name+"</div>")
+            let $id = $("<div id='id'>"+id+"</div>")
+            let $puuid = $("<div id='puuid'>"+puuid+"</div>")
+            let $summonerLevel = $("<div id='summonerLevel'>"+summonerLevel+"</div>")
+
+            $("body").append($accountId, $profileIconId, $revisionDate, $name, $id, $puuid, $summonerLevel)
+        });
+     
+    </script>
+
+</body>
+
+</html>

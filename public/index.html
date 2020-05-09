@@ -1,0 +1,38 @@
+<html>
+
+<body>
+
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+
+
+        Summoner: <input id='sumName' type="text" name="summoner">
+        <input type="button" onclick="getSummoner()" value="Submit">
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src='javascripts/javascript.js'></script>
+    <script type="text/javascript">
+        function getSummoner() {
+            let summonerName = document.getElementById("sumName").value
+            $.getJSON('https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + summonerName +
+                '?api_key=RGAPI-ebc3ed14-b239-4464-bf94-19cfeb7b2f7f', function (data) {
+
+                    localStorage.setItem('sumObj', JSON.stringify(data))
+                    window.open('summoner.html')
+
+                });
+
+        }
+    </script>
+
+</body>
+
+</html>
